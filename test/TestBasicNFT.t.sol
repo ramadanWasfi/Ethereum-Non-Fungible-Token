@@ -9,8 +9,9 @@ import {DeployBasicNFT} from "../script/DeployBasicNFT.s.sol";
 contract BasciNFT_Test is Test {
     DeployBasicNFT public deployer;
     BasicNFT public NFT;
-    string constant public URI = "ipfs://Tokens are everywhere";
+    string public constant URI = "ipfs://Fake URL";
     address user1;
+
     function setUp() public {
         deployer = new DeployBasicNFT();
         NFT = deployer.run();
@@ -22,18 +23,18 @@ contract BasciNFT_Test is Test {
 
         string memory tokenName = NFT.name();
 
-        assertEq(name,tokenName);
+        assertEq(name, tokenName);
     }
 
-     function testNFTDeployedWithCorrectSymbol() public view {
+    function testNFTDeployedWithCorrectSymbol() public view {
         string memory symbol = "MRC";
 
         string memory tokenSymbol = NFT.symbol();
 
-        assertEq(symbol,tokenSymbol);
+        assertEq(symbol, tokenSymbol);
     }
 
-    function testInitialTokenCounterEqualsZero() public view{
+    function testInitialTokenCounterEqualsZero() public view {
         uint256 tokenCounter = NFT.getTokensCounter();
         assertEq(tokenCounter, 0);
     }
@@ -48,6 +49,4 @@ contract BasciNFT_Test is Test {
         assertEq(NFT.getTokensCounter(), 1);
         assertEq(NFT.balanceOf(user1), 1);
     }
-
-
 }
