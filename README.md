@@ -10,7 +10,7 @@ Simple Ethereum smart contract for Non-fungible token (NFT) ERC-721 Stored Off-C
 ### Steps
 1. Clone the repository 
    ```shell
-    git clone https://github.com/ramadanWasfi/Ethereum-Fungible-Token.git
+    git clone https://github.com/ramadanWasfi/Ethereum-Non-Fungible-Token.git
    ``` 
    ``` shell
    cd Ethereum-Non-Fungible-Token
