@@ -1,5 +1,5 @@
 # Morse
-Simple Ethereum smart contract for Non-fungible token (NFT) ERC-721 Stored Off-Chain
+Simple Ethereum smart contract for Non-fungible token (NFT) ERC-721 Stored Off-Chain 
 
 
 ## Installation
@@ -42,7 +42,7 @@ forge test
 2. Open a new Terminal to deploy the contracts from it and type the following 
    - Create an account for deployment with private key and password
    ```shell
-   cast wallet import LocalTestNetAccount --interactive
+   cast wallet import testAccount --interactive
    ```
    - copy a private key from Anvil accounts and paste it in terminal prompt
    ``` shel
@@ -54,19 +54,26 @@ forge test
    ```
    - now you will have an account with its address you can use the account name and address for deployment
    ``` shell
-   `LocalTestNetAccount` keystore was saved successfully. Address:0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+   testAccount keystore was saved successfully. 
+   Address: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
    ```
-   - `Account Name` : LocalTestNetAccount
+   - `Account Name` : testAccount
    - `Account Address`: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
    
    - deploy with the previously created account and the password
     ``` shell
-    forge script script/DeployKalm.s.sol --rpc-url http://localhost:8545 --account LocalTestNetAccount --sender 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 --broadcast -vvv
+    forge script script/DeployBasicNFT.s.sol  --rpc-url http://localhost:8545 --account testAccount --sender 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 --broadcast -vvv
    ```
    - enter the previously created password for this account
    ```shell
    ==========================
    Enter keystore password:
+   ```
+   - Smart contract deployed at local test network (Anvil) at 
+   ```shell
+   ##### anvil-hardhat
+   ✅  [Success]Hash: 0xa135ad86ff049147745c5527e1ea945f1a797ecdd77f0ac817856e5e5058ff91
+   Contract Address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
    ```
 ## Security Considerations
 - Don't use this smart contract in production environment without auditing
